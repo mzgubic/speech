@@ -1,4 +1,6 @@
 bin
 lib
 pyvenv.cfg
+*.pyc
 *.wav
+*.json
