@@ -1,3 +1,4 @@
+import sys
 import wave
 import pyaudio
 
@@ -6,7 +7,7 @@ def record(fname):
 
     # the numbers
     RATE = 44100
-    CHUNK = 2048
+    CHUNK = 4096
     FORMAT = pyaudio.paInt16
 
     # begin recording
@@ -45,7 +46,14 @@ def record(fname):
 
     return None
 
-record('test.wav')
+if __name__ == '__main__':
+   
+    try:
+        name = sys.argv[1]
+    except IndexError:
+        name = 'test.wav'
+
+    record(name)
     
 
 
